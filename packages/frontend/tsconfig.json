@@ -1,0 +1,15 @@
+{
+	"extends": "tsconfig/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "src",
+		"paths": {
+			"$/*": ["*"]
+		},
+		"outDir": "dist",
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
+		"plugins": [{ "name": "typescript-plugin-css-modules" }],
+		"types": ["unplugin-icons/types/solid"]
+	},
+	"include": ["src/**/*", "test/**/*", "auto-imports.d.ts"]
+}

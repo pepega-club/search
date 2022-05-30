@@ -1,0 +1,56 @@
+@use "sass:math";
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: calc($gap-x/-2);
+	margin-right: calc($gap-x/-2);
+}
+
+.row > * {
+	flex: 0 0 auto;
+	max-width: 100%;
+	margin-bottom: $gap-y;
+	padding-left: calc($gap-x/2);
+	padding-right: calc($gap-x/2);
+}
+
+@each $breakpoint, $breakpoint-min in $breakpoints {
+	$-breakpoint: "";
+	@if $breakpoint != "xs" {
+		$-breakpoint: "-#{$breakpoint}";
+	}
+
+	.container#{$-breakpoint} {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: calc($gap-x/2);
+		padding-right: calc($gap-x/2);
+	}
+
+	@media (min-width: $breakpoint-min) {
+		@for $column from 1 through $columns {
+			.col#{$-breakpoint}-#{$column} {
+				width: math.div(100%, $columns) * $column;
+			}
+		}
+
+		$container-max: 100%;
+		@if $breakpoint != "xs" {
+			$container-max: $breakpoint-min;
+		}
+
+		.container#{$-breakpoint} {
+			max-width: $container-max;
+		}
+	}
+}
+
+@mixin fullscreen {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}

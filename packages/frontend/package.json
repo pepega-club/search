@@ -1,0 +1,27 @@
+{
+	"name": "frontend",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"scripts": {
+		"dev": "vite",
+		"start": "vite",
+		"build": "vite build",
+		"serve": "vite preview",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"unplugin-auto-import": "^0.8.6",
+		"@iconify-json/mdi": "^1.1.19",
+		"vite-plugin-solid": "^2.2.6",
+		"unplugin-icons": "^0.14.3",
+		"tsconfig": "workspace:^0.0.1",
+		"sass": "^1.52.1",
+		"vite": "^2.9.9"
+	},
+	"dependencies": {
+		"material-design-icons": "^3.0.1",
+		"solid-app-router": "^0.3.3",
+		"solid-js": "^1.4.3",
+		"ress": "^5.0.2"
+	}
+}

@@ -1,0 +1,127 @@
+@use "sass:color";
+@use "sass:map";
+@import "_values.scss";
+@import "_utils.scss";
+
+body {
+	@include fullscreen;
+
+	font-family: $main-font;
+	background: $background;
+}
+
+body,
+input,
+textarea {
+	color: $text-1;
+}
+
+.icon {
+	color: $accent;
+	vertical-align: middle;
+}
+
+.logo {
+	font-family: $logo-font;
+	font-size: 3rem;
+	line-height: 3rem;
+	text-align: center;
+}
+
+.home {
+	padding-top: calc(50vh - 5.5rem);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	.logo {
+		margin-bottom: $gap-x;
+	}
+}
+
+// TODO: investigate weird scrolling on body on mobile browsers, not reproducible in responsive layout emulator on desktop
+.search {
+	position: relative;
+	width: 100%;
+	height: 3rem;
+
+	&:focus-within {
+		@media (max-width: map.get($breakpoints, "sm")), (max-height: map.get($breakpoints, "sm")) {
+			@include fullscreen;
+
+			background: $background;
+
+			.search__form {
+				border-radius: initial;
+				max-height: 100vh;
+				&__suggestions {
+					max-height: calc(100vh - 3rem);
+				}
+			}
+
+			.search__form {
+				border: none;
+			}
+		}
+
+		.search__form__suggestions:not(:empty) {
+			display: block;
+		}
+
+		.search__form {
+			border-color: $background-2;
+		}
+	}
+
+	&__form {
+		position: absolute;
+		width: 100%;
+		border: 2px solid transparent;
+		border-radius: 1.5rem;
+		background: $background-1;
+		overflow: hidden;
+
+		&__input {
+			display: inline-flex;
+			width: 100%;
+			height: 3rem;
+			overflow: hidden;
+
+			&__text {
+				width: 100%;
+				outline: none;
+				padding-left: $gap-x;
+			}
+
+			&__submit {
+				padding: 0 $gap-x;
+
+				&:hover,
+				&:focus {
+					background: $background-2;
+				}
+			}
+		}
+
+		&__suggestions {
+			display: none;
+			max-height: calc(50vh - 4rem);
+			overflow-y: scroll;
+			border-top: 2px solid $background-2;
+
+			list-style-type: none;
+
+			li {
+				display: flex;
+				align-items: center;
+				height: 3rem;
+				padding: 0 1rem;
+				vertical-align: middle;
+
+				&:hover {
+					background: $background-2;
+				}
+			}
+		}
+	}
+}

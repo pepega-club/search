@@ -1,0 +1,29 @@
+{
+	"name": "search",
+	"version": "0.0.1",
+	"description": "A metasearch engine",
+	"scripts": {
+		"lint": "eslint .",
+		"lint:fix": "npm run format && eslint --fix .",
+		"format": "prettier -w \"./**/*.{yaml,json,html,css,scss}\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"metasearch",
+		"search",
+		"searx"
+	],
+	"author": "Marko Gonchar <marko@pepega.club>",
+	"license": "AGPL-3.0-only",
+	"devDependencies": {
+		"@types/node": "^17.0.35",
+		"@typescript-eslint/eslint-plugin": "^5.26.0",
+		"@typescript-eslint/parser": "^5.26.0",
+		"concurrently": "^7.2.1",
+		"eslint": "^8.16.0",
+		"nodemon": "^2.0.16",
+		"prettier": "^2.6.2",
+		"typescript": "^4.7.2",
+		"typescript-plugin-css-modules": "^3.4.0"
+	}
+}

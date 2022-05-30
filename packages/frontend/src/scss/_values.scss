@@ -1,0 +1,28 @@
+// TODO: probably would be a good idea to use native css variables
+
+// Layouts
+$gap-x: 1rem;
+$gap-y: 1rem;
+$columns: 12;
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+// Colors
+$background: hsl(0deg, 0%, 8%);
+$background-1: hsl(0deg, 0%, 15%);
+$background-2: hsl(0deg, 0%, 25%);
+
+$accent: hsl(0deg, 0%, 50%);
+$text-1: hsl(0deg, 0%, 80%);
+$text-2: hsl(0deg, 0%, 90%);
+$text-darker: hsl(0deg, 0%, 60%);
+
+// Fonts
+$main-font: sans-serif;
+$logo-font: "Comfortaa", sans-serif;
