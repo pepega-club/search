@@ -3,15 +3,29 @@
 	"version": "0.0.1",
 	"description": "A metasearch engine",
 	"scripts": {
-		"lint": "eslint .",
-		"lint:fix": "npm run format && eslint --fix .",
-		"format": "prettier -w \"./**/*.{yaml,json,html,css,scss}\"",
+		"prepare": "husky install",
+		"build": "pnpm run -r build",
+		"dev": "pnpm run -r dev",
+		"fix": "pnpm run lint:fix",
+		"lint": "pnpm run eslint && pnpm run prettier",
+		"lint:fix": "pnpm run eslint:fix && pnpm run prettier:fix",
+		"eslint": "eslint .",
+		"eslint:fix": "eslint --fix .",
+		"prettier": "prettier -c \"./**/*.{yaml,json,html,css,scss}\"",
+		"prettier:fix": "prettier -w \"./**/*.{yaml,json,html,css,scss}\"",
 		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"lint-staged": {
+		"*.{yaml,json,html,css,scss}": "prettier -w",
+		"*.{ts,tsx,js,jsx}": "eslint --fix"
 	},
 	"keywords": [
 		"metasearch",
+		"metasearch-engine",
 		"search",
-		"searx"
+		"search-engine",
+		"searx",
+		"searxng"
 	],
 	"author": "Marko Gonchar <marko@pepega.club>",
 	"license": "AGPL-3.0-only",
@@ -21,6 +35,8 @@
 		"@typescript-eslint/parser": "^5.26.0",
 		"concurrently": "^7.2.1",
 		"eslint": "^8.16.0",
+		"husky": "^8.0.1",
+		"lint-staged": "^12.4.3",
 		"nodemon": "^2.0.16",
 		"prettier": "^2.6.2",
 		"typescript": "^4.7.2",
