@@ -12,7 +12,8 @@ body {
 
 body,
 input,
-textarea {
+textarea,
+button {
 	color: $text-1;
 }
 
@@ -93,6 +94,19 @@ textarea {
 				padding-left: $gap-x;
 			}
 
+			&__text:placeholder-shown + &__clear {
+				display: none;
+			}
+
+			&__clear {
+				padding: 0 0.5rem;
+
+				&:hover,
+				&:focus {
+					background: $background-2;
+				}
+			}
+
 			&__submit {
 				padding: 0 $gap-x;
 
@@ -112,14 +126,16 @@ textarea {
 			list-style-type: none;
 
 			li {
-				display: flex;
-				align-items: center;
-				height: 3rem;
-				padding: 0 1rem;
-				vertical-align: middle;
+				button {
+					height: 3rem;
+					text-align: left;
+					padding: 0 1rem;
+					width: 100%;
 
-				&:hover {
-					background: $background-2;
+					&:hover,
+					&:focus {
+						background: $background-2;
+					}
 				}
 			}
 		}
