@@ -175,15 +175,14 @@ button {
 		grid:
 			"logo"
 			"search-box"
-			"sep"
+			"border"
 			"content"
 			/ auto;
 	}
 
 	> .border {
 		grid-area: border;
-		background: $background-2;
-		height: $border-size;
+		color: $background-2;
 	}
 
 	> .logo {
@@ -202,5 +201,8 @@ button {
 
 	> .content {
 		grid-area: content;
+		display: flex;
+		flex-direction: column;
+		gap: $gap-x $gap-y;
 	}
 }
