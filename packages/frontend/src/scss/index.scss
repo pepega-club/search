@@ -5,7 +5,8 @@
 @import "_utils.scss";
 
 body {
-	@include fullscreen;
+	width: 100vw;
+	height: 100vh;
 
 	font-family: $main-font;
 	background: $background;
@@ -42,13 +43,14 @@ button {
 // TODO: investigate weird scrolling on body on mobile browsers, not reproducible in responsive layout emulator on desktop
 ._search-box {
 	$height: 3rem;
+	$full-height: calc($height + $border-size * 2);
 
 	position: relative;
 	width: 100%;
 	height: calc($height + $border-size * 2);
 
 	&:focus-within {
-		@media (max-width: bp(sm)), (max-height: bp(md)) {
+		@media (max-width: bp(md)), (max-height: bp(md)) {
 			@include fullscreen;
 			z-index: 1000;
 
@@ -119,7 +121,7 @@ button {
 
 		> .suggestions {
 			display: none;
-			max-height: calc(50vh - ($height + $gap-y));
+			max-height: calc(50vh - ($full-height + $gap-y));
 			overflow-y: scroll;
 			border-top: $border-size solid $background-2;
 
