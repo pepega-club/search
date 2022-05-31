@@ -1,9 +1,13 @@
 // TODO: probably would be a good idea to use native css variables
 
-// Layouts
+// Layout
 $gap-x: 1rem;
+$gap-x-half: math.div($gap-x, 2);
 $gap-y: 1rem;
-$columns: 12;
+$gap-y-half: math.div($gap-y, 2);
+
+$border-size: 2px;
+
 $breakpoints: (
 	xs: 0,
 	sm: 32rem,
@@ -14,18 +18,15 @@ $breakpoints: (
 );
 
 // Colors
-$background: hsl(0deg, 0%, 8%);
-$background-1: hsl(0deg, 0%, 15%);
-$background-2: hsl(0deg, 0%, 25%);
+$background: hsl(0deg, 0%, 10%);
+$background-1: hsl(0deg, 0%, 14%);
+$background-2: hsl(0deg, 0%, 20%);
 
 $accent: hsl(0deg, 0%, 50%);
 $text-1: hsl(0deg, 0%, 80%);
 $text-2: hsl(0deg, 0%, 90%);
-$text-darker: hsl(0deg, 0%, 60%);
+$text-darker: hsl(0deg, 0%, 50%);
 
 // Fonts
 $main-font: sans-serif;
 $logo-font: "Comfortaa", sans-serif;
-
-// Sizing
-$border-size: 2px;
