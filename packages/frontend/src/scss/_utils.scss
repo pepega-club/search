@@ -1,4 +1,9 @@
+@use "sass:map";
 @use "sass:math";
+
+@function bp($breakpoint) {
+	@return map.get($breakpoints, $breakpoint);
+}
 
 .row {
 	display: flex;
@@ -48,7 +53,7 @@
 }
 
 @mixin fullscreen {
-	position: absolute;
+	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	top: 0;

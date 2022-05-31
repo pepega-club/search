@@ -6,11 +6,11 @@ $gap-y: 1rem;
 $columns: 12;
 $breakpoints: (
 	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1400px,
+	sm: 32rem,
+	md: 48rem,
+	lg: 85.375rem,
+	xl: 120rem,
+	xxl: 160rem,
 );
 
 // Colors
@@ -26,3 +26,6 @@ $text-darker: hsl(0deg, 0%, 60%);
 // Fonts
 $main-font: sans-serif;
 $logo-font: "Comfortaa", sans-serif;
+
+// Sizing
+$border-size: 2px;
