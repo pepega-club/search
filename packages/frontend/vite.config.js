@@ -17,7 +17,7 @@ export default defineConfig({
 				})
 			]
 		}),
-		iconsPlugin({ compiler: "solid", defaultClass: "icon" })
+		iconsPlugin({ compiler: "solid", defaultClass: "_icon" })
 	],
 	build: {
 		target: "es2015",

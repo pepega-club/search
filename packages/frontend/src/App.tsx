@@ -1,13 +1,12 @@
 import { Routes, Route } from "solid-app-router";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
+import SearchPage from "./pages/SearchPage";
 
 export default function App() {
 	return <>
 		<Routes>
-			<Route path="/" element={Home} />
-			<Route path="/dank" element={
-				<h1>Zoinks!!! You just got danked!</h1>
-			}/>
+			<Route path="/" element={HomePage} />
+			<Route path="/search" element={SearchPage}/>
 		</Routes>
 	</>;
 }
