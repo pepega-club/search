@@ -54,7 +54,6 @@ button {
 	$full-height: calc($height + $border-size * 2);
 
 	position: relative;
-	width: 100%;
 	height: calc($height + $border-size * 2);
 
 	&:focus-within {
@@ -206,5 +205,39 @@ button {
 		display: flex;
 		flex-direction: column;
 		gap: $gap-x $gap-y;
+	}
+}
+
+._search-result {
+	display: flex;
+	flex-direction: column;
+	border-radius: 1.5rem;
+	padding: $gap-y $gap-x;
+	background: $background-1;
+
+	> *:not(:first-child):not(:last-child) {
+		padding: 0.25rem 0;
+	}
+
+	> .link {
+		text-decoration: none;
+		color: $text-1;
+
+		> .site {
+			display: inline-flex;
+			align-items: center;
+
+			gap: $gap-x-half;
+
+			> .favicon {
+				height: 1rem;
+				width: 1rem;
+				border-radius: 1rem;
+			}
+
+			> .url {
+				color: $text-darker;
+			}
+		}
 	}
 }
