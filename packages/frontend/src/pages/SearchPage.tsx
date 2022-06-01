@@ -1,11 +1,12 @@
 import SearchBox from "../components/SearchBox";
+import Logo from "../components/Logo";
 
 export default function SearchPage() {
 	return <>
 		<div class="_search-page">
-			<a class="logo" href="/">DankSearch</a>
+			<Logo />
 			<SearchBox />
-			<span class="border"></span>
+			<hr class="border" />
 			<div class="content">
 				xd
 			</div>

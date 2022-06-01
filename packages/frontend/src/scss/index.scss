@@ -24,20 +24,28 @@ button {
 	vertical-align: middle;
 }
 
+._logo {
+	color: $text-1;
+	font-family: $logo-font;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	align-self: center;
+
+	&.big {
+		font-size: 1.5rem;
+	}
+}
+
 ._home-page {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	gap: $gap-y $gap-x;
+	padding: $gap-y $gap-x;
+	margin: auto;
 	height: 100%;
-
-	.logo {
-		font-family: $logo-font;
-		font-size: 3rem;
-		line-height: 3rem;
-		text-align: center;
-
-		margin-bottom: $gap-x;
-	}
+	max-width: bp(md);
 }
 
 // TODO: investigate weird scrolling on body on mobile browsers, not reproducible in responsive layout emulator on desktop
@@ -185,14 +193,8 @@ button {
 		color: $background-2;
 	}
 
-	> .logo {
+	> ._logo {
 		grid-area: logo;
-		align-self: center;
-		font-family: $logo-font;
-		font-size: 2rem;
-		color: $accent;
-		text-align: center;
-		text-decoration: none;
 	}
 
 	> ._search-box {
